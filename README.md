@@ -89,8 +89,8 @@ Here are sample `curl` requests for the **Item** entity:
 
 ### Create an Item
 ```bash
-curl -X POST "http://localhost:8000/api/v1/items/" \\
-     -H "Content-Type: application/json" \\
+curl -X POST "http://localhost:8000/api/v1/items/" \
+     -H "Content-Type: application/json" \
      -d '{"title": "Laptop", "description": "High performance laptop", "price": 1200.50}'
 ```
 
@@ -106,8 +106,8 @@ curl -X GET "http://localhost:8000/api/v1/items/<ITEM_ID>"
 
 ### Update an Item
 ```bash
-curl -X PUT "http://localhost:8000/api/v1/items/<ITEM_ID>" \\
-     -H "Content-Type: application/json" \\
+curl -X PUT "http://localhost:8000/api/v1/items/<ITEM_ID>" \
+     -H "Content-Type: application/json" \
      -d '{"price": 1150.99}'
 ```
 
@@ -144,7 +144,7 @@ DuckDB is powerful, but if your traffic grows:
 
 ## Cost Optimization Strategy
 
-1. **Zero DB Infra Cost**: Using DuckDB eliminates the need for managed RDS (Amazon RDS, Google Cloud SQL), saving \$20–\$100+ per month for small projects.
+1. **Zero DB Infra Cost**: Using DuckDB eliminates the need for managed RDS (Amazon RDS, Google Cloud SQL), saving $20–$100+ per month for small projects.
 2. **Low Container Footprint**: DuckDB is embedded; your Docker image only contains the API and the binary engine. It requires less RAM than a standalone DB server.
 3. **Efficient Resource Usage**: Multi-stage Docker builds ensure small images, reducing storage and bandwidth costs.
 4. **Efficient Queries**: Columnar storage in DuckDB means queries touch less data on disk, leading to lower I/O costs in cloud environments.
@@ -158,3 +158,19 @@ Run simulations:
 pytest
 ```
 *Tests use an isolated `test_data/test.db` to ensure data integrity.*
+
+---
+
+## GitHub Metadata
+
+### GitHub Topics (Tags)
+`fastapi` `duckdb` `python` `clean-architecture` `crud-api` `docker` `pydantic-v2` `performance` `rest-api` `backend-starter`
+
+### Suggested "About" Section
+**Production-ready FastAPI + DuckDB boilerplate featuring:**
+
+- 🏗️ **Clean Architecture** (Decoupled Layers)
+- ⚡ **High-Performance** Data Access (No ORM overhead)
+- 🐋 **Docker & Docker Compose** for easy deployment
+- 🧪 **Pytest** with automated DB management
+- 💰 **Cost Optimized** (Zero managed DB fees)

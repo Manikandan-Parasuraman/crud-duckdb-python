@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: fast-duck-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DUCKDB_DATABASE=data/duckdb.db
+      - LOG_LEVEL=INFO
+    restart: always
+
+volumes:
+  duckdb_data:
